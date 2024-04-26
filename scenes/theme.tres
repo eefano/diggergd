@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dgkf8e14kwrjx"]
+
+[ext_resource type="FontFile" uid="uid://bqkf3c3eqq80t" path="res://assets/PxPlus_IBM_BIOS.ttf" id="1_8v3cs"]
+
+[resource]
+default_font = ExtResource("1_8v3cs")
+default_font_size = 8

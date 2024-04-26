@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://cq7hai27n5xit"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_wbs1n"]
+[ext_resource type="PackedScene" uid="uid://dsk8gxbf4jgj3" path="res://scenes/menu.tscn" id="2_7cwcn"]
+[ext_resource type="PackedScene" uid="uid://b2uh73stt3je" path="res://scenes/game.tscn" id="3_rxcpe"]
+[ext_resource type="PackedScene" uid="uid://5jw8tgryy06a" path="res://scenes/intro.tscn" id="4_pwt6e"]
+[ext_resource type="PackedScene" uid="uid://m2wube07utn7" path="res://scenes/loser.tscn" id="5_bfi3r"]
+[ext_resource type="PackedScene" uid="uid://bqsilqafb7wnm" path="res://scenes/winner.tscn" id="6_d0ae6"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_wbs1n")
+
+[node name="Menu" parent="." instance=ExtResource("2_7cwcn")]
+
+[node name="Game" parent="." instance=ExtResource("3_rxcpe")]
+
+[node name="Intro" parent="." instance=ExtResource("4_pwt6e")]
+
+[node name="Loser" parent="." instance=ExtResource("5_bfi3r")]
+
+[node name="Winner" parent="." instance=ExtResource("6_d0ae6")]
+
+[connection signal="cancel" from="Menu" to="." method="_on_menu_cancel"]
+[connection signal="select" from="Menu" to="." method="_on_menu_select"]
+[connection signal="end_game" from="Game" to="." method="_on_game_end_game"]
+[connection signal="loser" from="Game" to="." method="_on_game_loser"]
+[connection signal="winner" from="Game" to="." method="_on_game_winner"]
+[connection signal="cancel" from="Intro" to="." method="_on_intro_cancel"]
+[connection signal="select" from="Intro" to="." method="_on_intro_select"]
+[connection signal="cancel" from="Loser" to="." method="_on_loser_cancel"]
+[connection signal="select" from="Loser" to="." method="_on_loser_select"]
+[connection signal="cancel" from="Winner" to="." method="_on_winner_cancel"]
+[connection signal="select" from="Winner" to="." method="_on_winner_select"]
