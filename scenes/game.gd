@@ -34,7 +34,7 @@ func setlives(n:int):
 
 func setlevelnumber(n:int):
 	levelnumber = n
-	$Level.text = "Level %2d" % n
+	$Level.text = "Level %2d" % (n+1)
 		
 func restartlevel():
 	
@@ -136,11 +136,15 @@ func _physics_process(delta):
 				var ctype = getatlas(c)
 				levelmap.set_cell(0, newpos, sourceid, ctype)
 				levelmap.set_cell(0, c, sourceid, VEMPTY)
-				under = getatlas(newpos+Vector2i.DOWN)
+				var undpos = newpos+Vector2i.DOWN
+				under = getatlas(undpos)
 				if under==VMYHERO:
+					var alt = levelmap.get_cell_alternative_tile(0,undpos)
+					alt |= TileSetAtlasSource.TRANSFORM_TRANSPOSE
+					levelmap.set_cell(0,undpos,sourceid,VMYHERO,alt)
 					diestate = true
 					$DeadFall.play()
-					return
+					nextmove = Vector2i.ZERO
 				if under!=VEMPTY and ctype==VSTONE:
 					$StonFall.play()
 				if under!=VEMPTY and ctype==VBONUS:
@@ -161,12 +165,11 @@ func _physics_process(delta):
 				VBONUS:
 					walk = true
 					settotbonus(totbonus-1)
+					$GotaBonu.play()
 					if totbonus==0:
 						$OpenDoor.play()
 						for c in levelmap.get_used_cells_by_id(0,-1,VDOORCL):
 							levelmap.set_cell(0, c, sourceid, VDOOROP)
-					else:
-						$GotaBonu.play()
 				VEMPTY:
 					walk = true
 				VGREENY:
@@ -184,6 +187,7 @@ func _physics_process(delta):
 					
 			if walk:
 				levelmap.set_cell(0, playerpos, levelmap.get_cell_source_id(0,playerpos), VEMPTY)
-				levelmap.set_cell(0, newpos, sourceid, VMYHERO)
+				if not winstate:
+					levelmap.set_cell(0, newpos, sourceid, VMYHERO)
 				playerpos = newpos
 

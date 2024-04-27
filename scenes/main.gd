@@ -55,7 +55,7 @@ func _on_winner_select():
 	startgame()
 
 func _on_menu_cancel():
-	get_tree().quit()
+	if OS.get_name()!="Web": get_tree().quit()
 
 func _on_menu_select():
 	remove_child(menu)
