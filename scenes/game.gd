@@ -190,4 +190,3 @@ func _physics_process(delta):
 				if not winstate:
 					levelmap.set_cell(0, newpos, sourceid, VMYHERO)
 				playerpos = newpos
-

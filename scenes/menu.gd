@@ -13,5 +13,3 @@ func _input(event):
 		select.emit()
 	if event.is_action_pressed("ui_cancel"):
 		cancel.emit()
-
-

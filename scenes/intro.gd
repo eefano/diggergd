@@ -18,4 +18,3 @@ func _physics_process(delta):
 		
 	loopy+=1
 	
-
