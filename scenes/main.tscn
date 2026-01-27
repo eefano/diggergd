@@ -1,24 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://cq7hai27n5xit"]
+[gd_scene format=3 uid="uid://cq7hai27n5xit"]
 
-[ext_resource type="Script" path="res://scenes/main.gd" id="1_wbs1n"]
+[ext_resource type="Script" uid="uid://cbum0guk2e3iv" path="res://scenes/main.gd" id="1_wbs1n"]
 [ext_resource type="PackedScene" uid="uid://dsk8gxbf4jgj3" path="res://scenes/menu.tscn" id="2_7cwcn"]
 [ext_resource type="PackedScene" uid="uid://b2uh73stt3je" path="res://scenes/game.tscn" id="3_rxcpe"]
 [ext_resource type="PackedScene" uid="uid://5jw8tgryy06a" path="res://scenes/intro.tscn" id="4_pwt6e"]
 [ext_resource type="PackedScene" uid="uid://m2wube07utn7" path="res://scenes/loser.tscn" id="5_bfi3r"]
 [ext_resource type="PackedScene" uid="uid://bqsilqafb7wnm" path="res://scenes/winner.tscn" id="6_d0ae6"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" unique_id=1841079808]
 script = ExtResource("1_wbs1n")
 
-[node name="Menu" parent="." instance=ExtResource("2_7cwcn")]
+[node name="Menu" parent="." unique_id=1407590884 instance=ExtResource("2_7cwcn")]
 
-[node name="Game" parent="." instance=ExtResource("3_rxcpe")]
+[node name="Game" parent="." unique_id=1678705426 instance=ExtResource("3_rxcpe")]
 
-[node name="Intro" parent="." instance=ExtResource("4_pwt6e")]
+[node name="Intro" parent="." unique_id=233355102 instance=ExtResource("4_pwt6e")]
 
-[node name="Loser" parent="." instance=ExtResource("5_bfi3r")]
+[node name="Loser" parent="." unique_id=1991273051 instance=ExtResource("5_bfi3r")]
 
-[node name="Winner" parent="." instance=ExtResource("6_d0ae6")]
+[node name="Winner" parent="." unique_id=1864292848 instance=ExtResource("6_d0ae6")]
 
 [connection signal="cancel" from="Menu" to="." method="_on_menu_cancel"]
 [connection signal="select" from="Menu" to="." method="_on_menu_select"]

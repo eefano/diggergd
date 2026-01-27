@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://b2uh73stt3je"]
+[gd_scene format=3 uid="uid://b2uh73stt3je"]
 
-[ext_resource type="Script" path="res://scenes/game.gd" id="1_w6lwx"]
+[ext_resource type="Script" uid="uid://duk4ra4wdv7ll" path="res://scenes/game.gd" id="1_w6lwx"]
 [ext_resource type="Theme" uid="uid://dgkf8e14kwrjx" path="res://scenes/theme.tres" id="1_w6uwb"]
 [ext_resource type="AudioStream" uid="uid://disasxfs7kb7f" path="res://assets/digg000.mp3" id="3_8hhup"]
 [ext_resource type="AudioStream" uid="uid://7thsypan1xh5" path="res://assets/digg001.mp3" id="4_3gigc"]
@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://drcqy5ewvkpp7" path="res://assets/digg005.mp3" id="8_fwtb4"]
 [ext_resource type="AudioStream" uid="uid://cgvvx1iq2yd83" path="res://assets/digg006.mp3" id="9_ncr8o"]
 
-[node name="Game" type="Control"]
+[node name="Game" type="Control" unique_id=52746323]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +20,7 @@ grow_vertical = 2
 theme = ExtResource("1_w6uwb")
 script = ExtResource("1_w6lwx")
 
-[node name="Lives" type="Label" parent="."]
+[node name="Lives" type="Label" parent="." unique_id=2046154101]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -31,7 +31,7 @@ grow_vertical = 0
 text = "Lives"
 vertical_alignment = 2
 
-[node name="Level" type="Label" parent="."]
+[node name="Level" type="Label" parent="." unique_id=1064959398]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -47,7 +47,7 @@ text = "Level"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Left" type="Label" parent="."]
+[node name="Left" type="Label" parent="." unique_id=1693855689]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -62,28 +62,28 @@ text = "Left"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="StonFall" type="AudioStreamPlayer" parent="."]
+[node name="StonFall" type="AudioStreamPlayer" parent="." unique_id=124342493]
 stream = ExtResource("3_8hhup")
 
-[node name="PushPull" type="AudioStreamPlayer" parent="."]
+[node name="PushPull" type="AudioStreamPlayer" parent="." unique_id=1827468988]
 stream = ExtResource("4_3gigc")
 
-[node name="BonuFall" type="AudioStreamPlayer" parent="."]
+[node name="BonuFall" type="AudioStreamPlayer" parent="." unique_id=569525698]
 stream = ExtResource("5_xl6to")
 
-[node name="DeadFall" type="AudioStreamPlayer" parent="."]
+[node name="DeadFall" type="AudioStreamPlayer" parent="." unique_id=1358974632]
 stream = ExtResource("6_3c7dn")
 
-[node name="OpenDoor" type="AudioStreamPlayer" parent="."]
+[node name="OpenDoor" type="AudioStreamPlayer" parent="." unique_id=632343913]
 stream = ExtResource("7_pv7uj")
 
-[node name="GotaBonu" type="AudioStreamPlayer" parent="."]
+[node name="GotaBonu" type="AudioStreamPlayer" parent="." unique_id=1526269079]
 stream = ExtResource("8_fwtb4")
 
-[node name="ExitLevl" type="AudioStreamPlayer" parent="."]
+[node name="ExitLevl" type="AudioStreamPlayer" parent="." unique_id=27597351]
 stream = ExtResource("9_ncr8o")
 
-[node name="Elapsed" type="Label" parent="."]
+[node name="Elapsed" type="Label" parent="." unique_id=257177640]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
